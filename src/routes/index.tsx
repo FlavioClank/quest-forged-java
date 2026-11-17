@@ -84,14 +84,14 @@ function JavaQuest() {
 
   return (
     <div className="dark min-h-screen bg-background text-foreground font-sans">
-      <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-card/90 px-6 py-3 backdrop-blur">
+      <header className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-border bg-card/90 px-6 py-3 backdrop-blur">
         <div className="flex items-center gap-2 text-xl font-extrabold"><span>☕</span><span className="text-primary">Java</span>Quest</div>
-        <div className="flex flex-1 max-w-md items-center gap-3">
+        <div className="order-3 flex w-full items-center gap-3 sm:order-none sm:w-auto sm:flex-1 sm:max-w-md">
           <span className="whitespace-nowrap rounded-full bg-primary/15 px-3 py-1 text-xs font-bold text-primary">Nível {level + 1}: {LEVELS[Math.min(level, LEVELS.length - 1)]}</span>
           <div className="h-3 flex-1 overflow-hidden rounded-full bg-muted">
             <div className="h-full rounded-full bg-primary transition-all duration-500" style={{ width: `${xpIn}%` }} />
           </div>
-          <span className="text-xs text-muted-foreground">{xpIn}/{XP_PER_LEVEL} XP</span>
+          <span className="whitespace-nowrap text-xs text-muted-foreground">{xpIn}/{XP_PER_LEVEL} XP</span>
         </div>
         <div className="flex items-center gap-4 font-bold">
           <span className="text-gold">🪙 {p.coins}</span>
