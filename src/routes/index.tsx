@@ -66,7 +66,7 @@ function JavaQuest() {
   useEffect(() => { if (loaded) localStorage.setItem(KEY, JSON.stringify(p)); }, [p, loaded]);
 
   const all = MODULES.flatMap((m) => m.lessons);
-  const lesson = all.find((l) => l.id === p.current) ?? all[0];
+  const lesson: Lesson = all.find((l) => l.id === p.current) ?? all[0]!;
   const level = Math.floor(p.xp / XP_PER_LEVEL);
   const xpIn = p.xp % XP_PER_LEVEL;
 
@@ -80,7 +80,7 @@ function JavaQuest() {
       if (!p.done.includes(lesson.id)) setP((s) => ({ ...s, xp: s.xp + 25, coins: s.coins + 10, done: [...s.done, lesson.id] }));
     }, 700);
   };
-  const next = () => { const i = all.findIndex((l) => l.id === lesson.id); if (i < all.length - 1) select(all[i + 1].id); };
+  const next = () => { const i = all.findIndex((l) => l.id === lesson.id); if (i < all.length - 1) select(all[i + 1]!.id); };
 
   return (
     <div className="dark min-h-screen bg-background text-foreground font-sans">
