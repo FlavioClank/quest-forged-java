@@ -182,7 +182,7 @@ function JavaQuest() {
                   <span className="text-xs font-bold text-success">{solved ? "✓ Concluída" : "+50 XP"}</span>
                 </div>
                 <p className="mt-2 font-semibold">{lesson.quiz.q}</p>
-                <p className="mt-1 text-xs text-muted-foreground">Analise o código ao lado.</p>
+                <p className="mt-1 text-xs text-muted-foreground">Analise o código na janela Main.java.</p>
                 <div className="mt-4 space-y-2">
                   {lesson.quiz.options.map((o, i) => {
                     const isAns = i === lesson.quiz.answer, isPick = i === picked, locked = picked === lesson.quiz.answer;
